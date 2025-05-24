@@ -1,0 +1,99 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%; /* Dark background for cyberpunk feel */
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 267 83% 74%; /* Purple */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 325 89% 61%; /* Pink */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 29 100% 53%; /* Orange */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-black text-foreground antialiased;
+    background-image: url('/file-uploads/0fc2ebce-66ed-4d51-8648-d41fdfcfb7ba.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(1px);
+    z-index: -1;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 5px theme('colors.cyber.purple'), 0 0 20px theme('colors.cyber.purple');
+  }
+  
+  .text-glow-pink {
+    text-shadow: 0 0 5px theme('colors.cyber.pink'), 0 0 20px theme('colors.cyber.pink');
+  }
+  
+  .neon-border {
+    box-shadow: 0 0 5px theme('colors.cyber.purple'), 0 0 10px theme('colors.cyber.purple');
+  }
+  
+  .neon-border-pink {
+    box-shadow: 0 0 5px theme('colors.cyber.pink'), 0 0 10px theme('colors.cyber.pink');
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/10 border border-white/20;
+  }
+
+  .cyber-grid {
+    background-image: linear-gradient(0deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
